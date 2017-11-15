@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Animals Sound
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- dimensions set using attributes -->
+<ion-img width="100%" height="70%" src="../assets/imgs/panda.jpg"></ion-img>
+
+<!-- bouton qui nous crée un page qui sera au dessus de la pile de page (historique de navigation) -->
+<!-- root aurait instancier une nouvelle page et fermer celle actuellement ouverte. -->
+<!-- idéale quand on veut valider un login et ne pas avoir la possibilité de revenir dessu -->
+<button ion-button  [navPush]="targetPage" full >Prêt à démarer??</button>
+</ion-content>

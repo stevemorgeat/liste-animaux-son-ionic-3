@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ListanimalsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- Entête de la page -->
+  <ion-navbar>
+    <ion-title>Sound of the animals</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h6>{{titre}}</h6>
+  <ion-list>
+    <ion-list-header>Les fruits</ion-list-header>
+    <ion-item-group [reorder]="showReorder" (ionItemReorder)="$event.applyTo(animals)">
+      <ion-item-sliding  *ngFor="let animal of animals; let itemPosition = index" (click)="play(itemPosition)">
+        <ion-item>
+          <h4>{{ animal.title }}</h4>
+          <p>{{ animal.desc }}</p>
+          <ion-avatar item-left>
+            <img src="assets/{{animal.image}}">
+          </ion-avatar>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="delete(itemPosition)"><ion-icon name="trash"></ion-icon></button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>
